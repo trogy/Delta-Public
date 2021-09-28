@@ -5,7 +5,7 @@
  
  You may host this on a private network if you wish.
  
-##INSTALL
+## INSTALL
 - Place this folder in /var/www/delta/
 - If using linux replace update_data.php with the one in the "Linux CRON Jobs" folder
 - Setup crontab for www-data with the job in the "Linux CRON Jobs" folder
