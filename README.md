@@ -4,6 +4,7 @@
  The PHP in this is messy but it works.
  
  You may host this on a private network if you wish.
+ No data will be provided this will be pulled the first time you load the app.
  
 ## INSTALL
 - Place this folder in /var/www/delta/
