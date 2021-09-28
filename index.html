@@ -1,0 +1,120 @@
+<!--
+Trogy.NZ Delta Self Hosted Edition
+(C) Marc Anderson | All Rights Reserved 
+File Last Updated : 9/28/2021
+-->
+<head>
+  <!-- PACE -->
+  <script src="JS_LIB/pace.min.js"></script>
+  <link rel="stylesheet" href="CSS/pace-theme-material.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@300;500&display=swap" rel="stylesheet">
+  <!-- MAIN CSS FILE -->
+  <link rel="stylesheet" href="CSS/main.css">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Animate.CSS -->
+  <link rel="stylesheet" href="CSS/animate.min.css">
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Apex Charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.28.1/apexcharts.min.js" integrity="sha512-yJyoHtyJ9yH4Z9cQ5cc33Y7Sd+ObZ8h+UBJxON2ZrdnypY5+G4/btkspHuTP6wAa8V3uomZhGyIet1Jdnm6COw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Page Meta -->
+  <meta charset="UTF-8">
+  <title> Delta SH Edition - A Covid-19 Project by Trogy.NZ </title>
+  <meta name="keywords" content="Delta SH Edition, Trogy.NZ, Covid-19, New Zealand, Coronavirus">
+  <meta name="description" content="Delta SH">
+  <meta name="author" content="Trogy.NZ">
+  <meta name="robots" content="index, follow"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <!-- Extra CSS -->
+  <style>
+    .pace-running > *:not(.pace) {
+      opacity:0;
+    }
+    body{
+      margin:0px;
+      padding:0px;
+      background: #000 url(bg.webp);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: left;
+      overflow-y: hidden;
+    }
+  </style>
+</head>
+
+<body class="animate__animated animate__fadeIn">
+  <div class="Splash">
+    <h1> Welcome To Delta SH Edition </h1>
+    <p> Before we get started heres a couple quick instructions </p>
+    <hr>
+    <h2> Locations Panel </h2><br>
+    <h4> On the left is the locations panel, this lists off all locations of interest these are sorted by exposure dates.<br>
+      to filter these click on the "Show/Hide Options" Button and click on the groups you want to hide<br>
+    </h4><br>
+    <h2> Map </h2><br>
+    <h4> On the right is a map of all current locations of interest, This also has a case counter in the top right corner.<br>
+      If at any time you manage to get lost in the map just click/tap "Reset Map"</h4>
+    <h2> Consider supporting Trogy.NZ </h2><br>
+    <h4> Donate with cryptocurrency at <a href="https://trogy.nz/crypto"> trogy.nz/crypto</a> <br>
+    </h4><br>
+    <h2> Thank you for using Delta SH.</h2>
+    <button id="SPLASH_BUTTON" class="btn btn-primary"> Enter Application </button>
+  </div>
+  <div class="animate__animated animate__fadeIn options-panel" id="COVID_SITE">
+    <h1> Options </h1>
+    <p> These options do not currently affect the map </p>
+    <div style="margin:auto;">
+      <button id="AKL_BUTTON" class="btn btn-primary"> Hide Auckland </button>
+      <button id="COR_BUTTON" class="btn btn-primary"> Hide Coromandel </button>
+      <button id="WEL_BUTTON" class="btn btn-primary"> Hide Wellington </button>
+      <button id="NEW_BUTTON" class="btn btn-primary"> Hide New Locations </button>
+      <button id="OLD_BUTTON" class="btn btn-primary"> Hide Old Locations</button>
+      <button id="OTH_BUTTON" class="btn btn-primary"> Hide Other </button>
+    </div>
+    <h1> Info </h1>
+    <p> 
+        <strong>Bug Reports & Feature Requests</strong><br>
+        Email delta@trogy.nz or call +64 28 255 91223 [Not Always Manned}<br>
+        <br>
+        <strong>DATA:</strong><br>
+        <br>
+        CC BY 4.0 - COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University https://github.com/CSSEGISandData/COVID-19.<br>
+        <br>
+        CC BY-SA 4.0 -  Ministry of Health New Zealand https://github.com/minhealthnz/nz-covid-data<br>
+        <br>
+    </p>
+  </div>
+  <div style="display:flex; position:absolute; padding-left:40vw;">
+    <div style="z-index:1010;"><button id="COVID_SITE_BUTTON" class="btn btn-primary"> Show/Hide Options </button></div>
+    <div style="z-index:1010;"><button id="CENTR_MAP" class="btn btn-primary"> Reset Map </button></div>
+  </div>
+  <div style='position:absolute; z-index:1100; margin:30px; width:60vw; background-color:white; padding:20px; display:none;' id="popup">
+  <div style="width:100%;" id="chart"></div>
+  </div>
+  <div style="position:absolute; top:0; right:0; z-index:1000; margin:10px; color:white; cursor: pointer;" id='CASE_NUMBERS'></div>
+  <div style="position:absolute; bottom:0; right:0; z-index:1000; margin:10px; color:white; padding-bottom: 20px;">
+    Delta SH Edition(C) Trogy.NZ<br> Data from Ministry of Health NZ & CSSE at Johns Hopkins University <br> Support Email: delta@trogy.nz <br> Ver: Public 1.0 | Released 28 Sept 2021
+  </div>
+  <div style='display:flex;'>
+    <div class="animate__animated animate__fadeIn animate__delay-1s" style='width: 30vw;margin: 10px;background-color:rgba(0,0,0, 0.5); color:white; border-radius:10px;'>
+      <div class="side-panel">
+        <h1 class="side-panel-header"> Covid-19 Locations of interest </h1>
+      </div>
+      <div class="side-panel-locations" id='locations'>
+      </div>
+    </div>
+    <div class="animate__animated animate__fadeIn animate__delay-1s" id="map" class="custom-popup">
+    </div>
+  </div>
+  <script src="JS/chart_cases.php"></script>
+  <script src="JS/app.js"></script>
+</body>
