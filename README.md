@@ -1,3 +1,5 @@
+# The Delta Project Has Ended No Further Updates Will Be Made
+
 # Delta Self Hosted Edition
  Track Covid-19 Exposure Locations in the NZ 2021 Delta Outbreak
 
